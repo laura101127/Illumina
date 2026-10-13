@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #55aebe;
+    --azul-oscuro: #327c89;
+    --azul-muy-claro: #eaf7f8;
+    --verde: #b9d9c3;
+    --verde-claro: #edf7ef;
+    --verde-oscuro: #6f9d7c;
+    --turquesa: #a9d5d2;
+    --fondo: #f8fcfb;
+    --fondo-verde: #eef7f2;
+    --blanco: #ffffff;
+    --texto: #355b60;
+    --texto-suave: #718487;
+    --borde: #dceceb;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "DM Sans", Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.registro-page {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.registro-info {
+    flex: 0 0 42%;
+    width: 42%;
+    padding: 42px 5%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+    background-color: #eef7f2 !important;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(185,217,195,0.40), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(169,213,210,0.25), transparent 30%),
+        #eef7f2 !important;
+}
+
+.brand {
+    position: relative;
+    z-index: 10;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: max-content;
+    color: var(--azul-oscuro);
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
+    max-width: 58px !important;
+    max-height: 58px !important;
+    object-fit: contain !important;
+    transform: none !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+.brand span {
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    color: var(--azul-oscuro) !important;
+    line-height: 1 !important;
+}
+
+.info-content {
+    position: relative;
+    z-index: 4;
+    max-width: 500px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(117, 185, 196, 0.2);
+    color: var(--verde-oscuro);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.info-content h1 {
+    color: #315e65;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.info-content h1 span {
+    display: block;
+    color: var(--azul-oscuro);
+    font-style: italic;
+}
+
+.info-content > p {
+    color: var(--texto-suave);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(220, 236, 235, 0.8);
+    border-radius: 14px;
+}
+
+.benefit > span {
+    color: var(--verde-oscuro);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.benefit strong {
+    display: block;
+    color: #3f7077;
+    font-size: 13px;
+}
+
+.benefit p {
+    color: var(--texto-suave);
+    font-size: 11px;
+}
+
+.decoracion {
+    position: absolute;
+    pointer-events: none;
+}
+
+.decoracion-uno {
+    right: 8%;
+    top: 25%;
+    color: rgba(63, 127, 137, 0.2);
+    font-size: 60px;
+}
+
+.decoracion-dos {
+    width: 250px;
+    height: 250px;
+    right: -100px;
+    bottom: -80px;
+    border-radius: 50%;
+    background: rgba(185, 217, 195, 0.3);
+}
+
+.decoracion-tres {
+    width: 80px;
+    height: 140px;
+    right: 15%;
+    bottom: 10%;
+    background: rgba(111, 157, 124, 0.15);
+    border-radius: 100% 0 100% 0;
+    transform: rotate(35deg);
+}
+
+.registro-form {
+    flex: 0 0 58%;
+    width: 58%;
+    padding: 40px 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff !important;
+}
+
+.registro-form form {
+    width: 100%;
+    max-width: 650px;
+}
+
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header > span {
+    color: var(--verde-oscuro);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.form-header h2 {
+    color: #315e65;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin: 6px 0;
+}
+
+.form-header p {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.form-section {
+    padding: 18px 0;
+    border-top: 1px solid var(--borde);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.section-title > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.section-title h3 {
+    color: #3f7077;
+    font-size: 15px;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.input-group.full-width {
+    grid-template-columns: 1fr;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #557174;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 11px 15px;
+    border: 1px solid #d9e9e8;
+    border-radius: 12px;
+    background: #f8fcfb;
+    color: #355b60;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2355aebe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--azul);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(85, 174, 190, 0.12);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.validation-msg {
+    font-size: 11px;
+    margin-top: 3px;
+    display: block;
+}
+
+.datos-personales {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: var(--verde-claro);
+}
+
+.check-datos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #557174;
+    font-size: 11px;
+}
+
+.check-datos input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--azul);
+}
+
+.create-btn {
+    width: 100%;
+    height: 48px;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 12px;
+    background: var(--azul);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.create-btn:hover {
+    background: var(--azul-oscuro);
+}
+
+.login-text {
+    margin-top: 14px;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.login-text a {
+    color: var(--azul-oscuro);
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .registro-page {
+        flex-direction: column;
+    }
+    .registro-info, .registro-form {
+        width: 100%;
+        flex: 1 0 100%;
+    }
+    .brand-logo {
+        width: 45px !important;
+        height: 45px !important;
+        min-width: 45px !important;
+        min-height: 45px !important;
+    }
+    .brand span {
+        font-size: 30px !important;
+    }
+}

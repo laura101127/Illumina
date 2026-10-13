@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Profesional | Illumina</title>
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="registro-page">
+
+    <div class="registro-info">
+        <a href="index.html" class="brand">
+            <img src="media/logo.png" alt="Illumina" class="brand-logo">
+            <span>Illumina</span>
+        </a>
+
+        <div class="info-content">
+            <span class="tag">✦ COMUNIDAD PROFESIONAL</span>
+            <h1>
+                Forma parte del equipo de
+                <span>especialistas.</span>
+            </h1>
+            <p>
+                Conecta con pacientes, gestiona tus consultas virtuales y brinda acompañamiento nutricional y estético integral con nuestras herramientas tecnológicas.
+            </p>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <span>01</span>
+                    <div>
+                        <strong>Consultas 100% Virtuales</strong>
+                        <p>Gestión flexible de agendas y seguimiento continuo a distancia.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <span>02</span>
+                    <div>
+                        <strong>Expediente Clínico Integrado</strong>
+                        <p>Acceso a métricas, hábitos e historial de salud de tus pacientes en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="decoracion decoracion-uno">✦</div>
+        <div class="decoracion decoracion-dos"></div>
+        <div class="decoracion decoracion-tres"></div>
+    </div>
+
+    <div class="registro-form">
+        <form id="registro-profesional-form" action="guardar_profesional.php" method="POST">
+            <div class="form-header">
+                <span>REGISTRO DE ESPECIALISTA</span>
+                <h2>Crear Cuenta Profesional</h2>
+                <p>Ingresa tus credenciales clínicas e información académica para verificar tu perfil.</p>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <span>1</span>
+                    <h3>Datos de Acceso</h3>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>
+                        Nombre Completo
+                        <input type="text" name="nombre" placeholder="Ej. Dra. Carolina Mejía" required>
+                    </label>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>
+                        Correo Electrónico Profesional
+                        <input type="email" id="correo" name="correo" placeholder="doctora@ejemplo.com" required>
+                        <span id="email-message" class="validation-msg"></span>
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Contraseña
+                        <div class="password-container">
+                            <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('contrasena', this)">👁</button>
+                        </div>
+                    </label>
+                    <label>
+                        Confirmar Contraseña
+                        <div class="password-container">
+                            <input type="password" id="confirmar-contrasena" name="confirmar_password" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('confirmar-contrasena', this)">👁</button>
+                        </div>
+                        <span id="password-message" class="validation-msg"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <span>2</span>
+                    <h3>Credenciales y Formación</h3>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Especialidad Principal
+                        <select name="especialidad" required>
+                            <option value="">Selecciona tu área...</option>
+                            <option value="Nutrición Clínica">Nutrición Clínica</option>
+                            <option value="Nutrición Deportiva">Nutrición Deportiva</option>
+                            <option value="Dermocosmiatría">Dermocosmiatría</option>
+                            <option value="Estética Integral">Estética Integral</option>
+                            <option value="Nutrición Vegetariana / Vegana">Nutrición Vegetariana / Vegana</option>
+                            <option value="Medicina General Nutricional">Medicina General Nutricional</option>
+                        </select>
+                    </label>
+                    <label>
+                        Tarjeta Prof. / Registro ReTHUS
+                        <input type="text" name="tarjeta_profesional" placeholder="Ej. TP-123456" required>
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Universidad / Institución de Egreso
+                        <input type="text" name="institucion" placeholder="Ej. Universidad de Antioquia / SENA" required>
+                    </label>
+                    <label>
+                        Años de Experiencia
+                        <input type="number" min="0" max="60" name="experiencia" placeholder="Ej. 5" required>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <span>3</span>
+                    <h3>Perfil Clínico y Enfoque</h3>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>
+                        Enfoque o Metodología de Trabajo
+                        <textarea name="enfoque" placeholder="Describe brevemente cómo acompañas a tus pacientes (Ej. Enfoque no pesocentrista, nutrición basada en plantas, tratamientos no invasivos...)" required></textarea>
+                    </label>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>
+                        Enlace a LinkedIn / Sitio Web / Portafolio (Opcional)
+                        <input type="url" name="link_perfil" placeholder="https://linkedin.com/in/tu-perfil">
+                    </label>
+                </div>
+            </div>
+
+            <div class="datos-personales">
+                <label class="check-datos">
+                    <input type="checkbox" name="terminos" required>
+                    <span>Declaro que las credenciales ingresadas son auténticas y acepto los términos para profesionales de Illumina.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="create-btn">
+                Registrarme <span>→</span>
+            </button>
+
+            <p class="login-text">
+                ¿Ya eres parte del equipo? <a href="login.html">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+
+</div>
+
+<script src="registro.js"></script>
+</body>
+</html>

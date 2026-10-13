@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Illumina</title>
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="registro-page">
+
+    <div class="registro-info">
+        <a href="index.html" class="brand">
+            <img src="media/logo.png" alt="Illumina" class="brand-logo">
+            <span>Illumina</span>
+        </a>
+
+        <div class="info-content">
+            <span class="tag">✦ ÚNETE A ILLUMINA</span>
+            <h1>
+                Tu camino hacia una
+                <span>vida saludable.</span>
+            </h1>
+            <p>
+                Regístrate para crear tu perfil personalizado, monitorear tu nutrición y mejorar tus hábitos con acompañamiento.
+            </p>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <span>01</span>
+                    <div>
+                        <strong>Plan Nutricional Personalizado</strong>
+                        <p>Basado en tus medidas, metas y preferencias de comida.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <span>02</span>
+                    <div>
+                        <strong>Seguimiento de Salud</strong>
+                        <p>Control de condiciones médicas, alergias y progresos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="decoracion decoracion-uno">✦</div>
+        <div class="decoracion decoracion-dos"></div>
+        <div class="decoracion decoracion-tres"></div>
+    </div>
+
+    <div class="registro-form">
+        <form id="registro-form" action="guardar_usuario.php" method="POST">
+            <div class="form-header">
+                <span>REGISTRO DE PACIENTE</span>
+                <h2>Crear Cuenta</h2>
+                <p>Ingresa tus datos personales y de salud para configurar tu perfil.</p>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <span>1</span>
+                    <h3>Datos Personales</h3>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>
+                        Nombre Completo
+                        <input type="text" name="nombre" placeholder="Ej. Ana Gómez" required>
+                    </label>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>
+                        Correo Electrónico
+                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                        <span id="email-message" class="validation-msg"></span>
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Contraseña
+                        <div class="password-container">
+                            <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('contrasena', this)">👁</button>
+                        </div>
+                    </label>
+                    <label>
+                        Confirmar Contraseña
+                        <div class="password-container">
+                            <input type="password" id="confirmar-contrasena" name="confirmar_password" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('confirmar-contrasena', this)">👁</button>
+                        </div>
+                        <span id="password-message" class="validation-msg"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <span>2</span>
+                    <h3>Medidas y Fecha de Nacimiento</h3>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Fecha de Nacimiento
+                        <input type="date" id="fecha" name="fecha" required>
+                        <span id="age-message" class="validation-msg"></span>
+                    </label>
+                    <label>
+                        Peso Actual (kg)
+                        <input type="number" step="0.1" name="peso" placeholder="Ej. 65.5" required>
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Estatura (cm)
+                        <input type="number" name="altura" placeholder="Ej. 165" required>
+                    </label>
+                    <label>
+                        ¿Por qué entras a la página? (Objetivo)
+                        <select name="motivo" required>
+                            <option value="">Selecciona tu motivo...</option>
+                            <option value="Vida saludable">Llevar una vida más saludable</option>
+                            <option value="Bajar peso">Bajar de peso / Reducir grasa</option>
+                            <option value="Aumentar masa muscular">Aumentar masa muscular</option>
+                            <option value="Colesterol / Triglicéridos">Controlar colesterol / triglicéridos</option>
+                            <option value="Diabetes / Resistencia a la insulina">Control de diabetes o resistencia a la insulina</option>
+                            <option value="Mejorar digestión">Mejorar la digestión</option>
+                            <option value="Recomendación médica">Por recomendación médica</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <span>3</span>
+                    <h3>Preferencias de Alimentación y Salud</h3>
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Preferencias de Comida / Dieta
+                        <select name="alimentacion" required>
+                            <option value="Omnívora">Omnívora (Como de todo)</option>
+                            <option value="Vegetariana">Vegetariana</option>
+                            <option value="Vegana">Vegana</option>
+                            <option value="Keto / Ceto">Keto / Cetogénica</option>
+                            <option value="Sin Gluten">Sin Gluten</option>
+                            <option value="Baja en Sodio">Baja en Sodio</option>
+                        </select>
+                    </label>
+                    <label>
+                        ¿Tienes Alergias o Intolerancias?
+                        <select id="tieneAlergias" name="tiene-alergias" required>
+                            <option value="no">No</option>
+                            <option value="si">Sí</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="input-group full-width" id="alergias-container" style="display: none;">
+                    <label>
+                        Escribe tus Alergias o Intolerancias
+                        <input type="text" id="alergias" name="alergias" placeholder="Ej. Lactosa, maní, mariscos...">
+                    </label>
+                </div>
+            </div>
+
+            <div class="datos-personales">
+                <label class="check-datos">
+                    <input type="checkbox" name="terminos" required>
+                    <span>Acepto los términos y la política de tratamiento de datos de Illumina.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="create-btn">
+                Registrarme <span>→</span>
+            </button>
+
+            <p class="login-text">
+                ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+
+</div>
+
+<script src="registro.js"></script>
+</body>
+</html>
